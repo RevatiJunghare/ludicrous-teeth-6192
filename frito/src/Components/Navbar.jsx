@@ -34,6 +34,7 @@ import {
   InputRightAddon,
   InputLeftAddon,
   InputGroup,
+  
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -52,26 +53,31 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 
-import { FaCartPlus } from "react-icons/fa";
-import { BiGroup } from "react-icons/bi";
-import { BiCategory } from "react-icons/bi";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { Link as RouterLink } from "react-router-dom";
-import Logo from "../Components/Pages/Frito.png";
-import AddIcon from '@mui/icons/Add';
-
 import {
   Alert,
   AlertIcon,
   AlertTitle,
   AlertDescription,
 } from "@chakra-ui/react";
-import Product from "../Components/Pages/ProductPage";
+import {useRef} from "react"
+
+import { FaCartPlus } from "react-icons/fa";
+import { BiGroup } from "react-icons/bi";
+import { BiCategory } from "react-icons/bi";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { Link as RouterLink } from "react-router-dom";
+import Logo from "../Components/Pages/Frito.png";
+import AddIcon from "@mui/icons-material/Add";
+import DrawerExample from "./Drawer"
+import Dropdown from "./Dropdown"
+
+
+
 
 export default function WithSubnavigation() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
-  const firstField = React.useRef();
+  const firstField = useRef(null);
 
   var React = require("react");
   const { onToggle } = useDisclosure();
@@ -108,22 +114,22 @@ export default function WithSubnavigation() {
               textAlign={useBreakpointValue({ base: "center", md: "left" })}
               fontFamily={"heading"}
               color={useColorModeValue("gray.800", "white")}>
-              <img src={Logo} width="150px" />
+              <img src={Logo} width="140px" />
             </Text>
           </RouterLink>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={20}>
+          <Flex display={{ base: "none", md: "flex" }} ml={35} mt={10}>
             {/* <DesktopNav /> */}
-            <div>
-              <img src="https://www.licious.in/img/rebranding/location_icon.svg" />
+            <div >
+              <img src="https://www.licious.in/img/rebranding/location_icon.svg" width={50}/>
             </div>
             <h2 fontSize={40} onClick={onOpen}>
               Location
             </h2>
 
             <Modal
-              // initialFocusRef={initialRef}
-              // finalFocusRef={finalRef}
+              //  initialFocusRef={initialRef}
+              //  finalFocusRef={finalRef}
               isOpen={isOpen}
               onClose={onClose}>
               <ModalOverlay />
@@ -162,7 +168,7 @@ export default function WithSubnavigation() {
             </Modal>
           </Flex>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={39} w={"2xl"}>
+          <Flex display={{ base: "none", md: "flex" }} ml={43} >
             <input placeholder="Search for any delicious product" />
           </Flex>
         </Flex>
@@ -172,9 +178,10 @@ export default function WithSubnavigation() {
           justify={"flex-end"}
           direction={"row"}
           spacing={25}
-          marginRight={12}>
-          <RouterLink>
-            <Button
+          marginRight={10}
+          >
+          <RouterLink >
+            {/* <Button
               as={"a"}
               fontSize={"md"}
               fontWeight={400}
@@ -183,82 +190,15 @@ export default function WithSubnavigation() {
               color={"black"}>
               <BiCategory size={23} />
               Categories
-            </Button>
+            </Button> */}
+
+            <Dropdown />
           </RouterLink>
 
           <RouterLink to="/login">
-            <Button
-              as={"a"}
-              fontSize={"md"}
-              fontWeight={400}
-              variant={"link"}
-              href={"#"}
-              color={"black"}
-              leftIcon={<AddIcon />}
-              onClick={onOpen}>
-              <BiGroup size={23} />
-              LogIn
-            </Button>
-
-            <Drawer
-              isOpen={isOpen}
-              placement="right"
-              initialFocusRef={firstField}
-              onClose={onClose}>
-              <DrawerOverlay />
-              <DrawerContent>
-                <DrawerCloseButton />
-                <DrawerHeader borderBottomWidth="1px">
-                  Create a new account
-                </DrawerHeader>
-
-                <DrawerBody>
-                  <Stack spacing="24px">
-                    <Box>
-                      <FormLabel htmlFor="username">Name</FormLabel>
-                      <Input
-                        ref={firstField}
-                        id="username"
-                        placeholder="Please enter user name"
-                      />
-                    </Box>
-
-                    <Box>
-                      <FormLabel htmlFor="url">Url</FormLabel>
-                      <InputGroup>
-                        <InputLeftAddon>http://</InputLeftAddon>
-                        <Input
-                          type="url"
-                          id="url"
-                          placeholder="Please enter domain"
-                        />
-                        <InputRightAddon>.com</InputRightAddon>
-                      </InputGroup>
-                    </Box>
-
-                    <Box>
-                      <FormLabel htmlFor="owner">Select Owner</FormLabel>
-                      <Select id="owner" defaultValue="segun">
-                        <option value="segun">Segun Adebayo</option>
-                        <option value="kola">Kola Tioluwani</option>
-                      </Select>
-                    </Box>
-
-                    <Box>
-                      <FormLabel htmlFor="desc">Description</FormLabel>
-                      <Textarea id="desc" />
-                    </Box>
-                  </Stack>
-                </DrawerBody>
-
-                <DrawerFooter borderTopWidth="1px">
-                  <Button variant="outline" mr={3} onClick={onClose}>
-                    Cancel
-                  </Button>
-                  <Button colorScheme="blue">Submit</Button>
-                </DrawerFooter>
-              </DrawerContent>
-            </Drawer>
+            
+              <DrawerExample/>
+            
           </RouterLink>
 
           <RouterLink to="/cart">

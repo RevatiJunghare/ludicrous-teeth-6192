@@ -2,7 +2,7 @@
 import './App.css';
 import AllRoutes from './Components/AllRoutes';
 import WithSubnavigation from './Components/Navbar';
-import Navbar from "./Components/Navbar"
+import Footer from "./Components/Footer"
 import CaptionCarousel from "./Components/Pages/Carosel"
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       <WithSubnavigation/>
       <CaptionCarousel/>
       <AllRoutes/>
+      <Footer/>
     </div>
   );
 }
