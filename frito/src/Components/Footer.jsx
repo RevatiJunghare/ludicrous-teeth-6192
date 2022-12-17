@@ -42,7 +42,8 @@ import {
   export default function Footer() {
     return (<>
         <Box bg={useColorModeValue('gray.50', 'gray.900')}
-        color={useColorModeValue('gray.700', 'gray.200')}>
+        color={useColorModeValue('gray.700', 'gray.200')}
+        marginTop={100}>
             <Container as={Stack} maxW={'6xl'} py={10}>
                 <h3 style={{textAlign:"left",fontSize:"20px"}} >FAQ</h3>
                  <div style={{textAlign:"left"}}>

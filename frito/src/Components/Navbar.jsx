@@ -20,7 +20,7 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  FormControl,
+  //FormControl,
   FormLabel,
   Input,
   ModalFooter,
@@ -70,6 +70,9 @@ import Logo from "../Components/Pages/Frito.png";
 import AddIcon from "@mui/icons-material/Add";
 import DrawerExample from "./Drawer"
 import Dropdown from "./Dropdown"
+import { Container, Navbar ,FormControl,Badge} from "react-bootstrap";
+import { NavigateBeforeRounded } from "@mui/icons-material";
+
 
 
 
@@ -83,51 +86,59 @@ export default function WithSubnavigation() {
   const { onToggle } = useDisclosure();
 
   return (
-    <Box>
-      <Flex
+    <Navbar style={{height:"60px",width:"1500px",marginTop:"30px"}}>
+      <Container  varient="dark" style={{width:"1500px",height:"60px"}}>
+      <Flex 
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
-        minH={"60px"}
-        py={{ base: 2 }}
+        minH={"30px"}
+        py={{ base: 3 }}
         px={{ base: 4 }}
-        borderBottom={1}
+        
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
-        fontSize={18}>
+        fontSize={18}
+        height={60}
+        >
         <Flex
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}>
+          display={{ base: "flex", md: "none" }}
+          >
           <IconButton
             onClick={onToggle}
             icon={
               isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
             }
             variant={"ghost"}
-            aria-label={"Toggle Navigation"}
+            aria-label={"Toggle Navigation"} 
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        <Flex flex={{ base: 1 }} justify={{  md: "start" }}  >
           <RouterLink to="/">
-            <Text
-              textAlign={useBreakpointValue({ base: "center", md: "left" })}
-              fontFamily={"heading"}
-              color={useColorModeValue("gray.800", "white")}>
-              <img src={Logo} width="140px" />
-            </Text>
+            <Navbar.Brand>
+                <Navbar.Text style={{marginRight:"100px"}}>
+                     <img src={Logo} style={{width:"150px",marginLeft:"-90px",marginTop:"50px"}} />
+                </Navbar.Text>
+                <spacer/>
+                <Navbar.Text className="search">
+             
+                     <FormControl style={{width:"500px",marginLeft:"-130px",marginTop:"-100px"}} placeholder="Search"/>
+                 </Navbar.Text>
+              </Navbar.Brand>
           </RouterLink>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={35} mt={10}>
+           {/* <Flex display={{ base: "none", md: "flex" }} ml={35} mt={10}> */}
             {/* <DesktopNav /> */}
-            <div >
+            {/* <div >
               <img src="https://www.licious.in/img/rebranding/location_icon.svg" width={50}/>
             </div>
             <h2 fontSize={40} onClick={onOpen}>
               Location
-            </h2>
+            </h2> */}
 
-            <Modal
+            {/* <Modal
               //  initialFocusRef={initialRef}
               //  finalFocusRef={finalRef}
               isOpen={isOpen}
@@ -165,13 +176,16 @@ export default function WithSubnavigation() {
                   <Button onClick={onClose}>Cancel</Button>
                 </ModalFooter>
               </ModalContent>
-            </Modal>
-          </Flex>
+            </Modal> */}
+          </Flex> 
 
-          <Flex display={{ base: "none", md: "flex" }} ml={43} >
+          {/* <Flex display={{ base: "none", md: "flex" }} ml={43} >
             <input placeholder="Search for any delicious product" />
-          </Flex>
-        </Flex>
+          </Flex> */}
+          
+
+          
+        {/* </Flex> */}
 
         <Stack
           flex={{ base: 1, md: 2 }}
@@ -195,7 +209,7 @@ export default function WithSubnavigation() {
             <Dropdown />
           </RouterLink>
 
-          <RouterLink to="/login">
+          <RouterLink>
             
               <DrawerExample/>
             
@@ -208,9 +222,12 @@ export default function WithSubnavigation() {
               fontWeight={400}
               variant={"link"}
               href={"#"}
-              color={"black"}>
-              <FaCartPlus size={20} />
+              color={"black"}
+               >
+              <FaCartPlus size={20}
+               />
               Cart
+              
             </Button>
           </RouterLink>
 
@@ -223,7 +240,8 @@ export default function WithSubnavigation() {
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
       </Collapse>
-    </Box>
+    </Container>
+    </Navbar>
   );
 }
 

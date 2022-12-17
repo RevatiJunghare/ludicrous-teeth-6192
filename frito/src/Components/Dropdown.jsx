@@ -24,7 +24,7 @@ import {
       /**
        * You may move the Popover outside Flex.
        */
-      <Flex justifyContent="center" mt={4}>
+      <Flex justifyContent="center" marginLeft={120}>
         <Popover placement="bottom" isLazy>
           <PopoverTrigger>
             {/* <IconButton
@@ -40,7 +40,8 @@ import {
                  fontWeight={400}
                  variant={"link"}
                  href={"#"}
-                 color={"black"}>
+                 color={"black"}
+                 marginLeft={300}>
                  <BiCategory size={23} />
                  Categories
                 </Button>
@@ -91,16 +92,20 @@ import {
                   fontSize="sm">
                   Chicken
                 </Button>
-                <Button
-                  w="194px"
-                  variant="ghost"
+
+                <RouterLink to="/product2">
+                    <Button
+                      w="194px"
+                      variant="ghost"
                   
-                  justifyContent="space-between"
-                  fontWeight="normal"
-                  colorScheme="red"
-                  fontSize="sm">
-                  Eggs
-                </Button>
+                      justifyContent="space-between"
+                      fontWeight="normal"
+                     colorScheme="red"
+                     fontSize="sm">
+                      Spreads
+                    </Button>
+                </RouterLink>
+                
               </Stack>
             </PopoverBody>
           </PopoverContent>

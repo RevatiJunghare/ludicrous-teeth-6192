@@ -1,11 +1,11 @@
 import { Flex,Grid,GridItem } from "@chakra-ui/react"
 import axios from "axios"
 import React, { useEffect, useState } from "react"
-import ProductCard from "./ProductCard"
+import ProductCard2 from "./ProductCard2"
 
 
 
-function Product(){
+function Product2(){
     const [data,setData] = useState([])
    const [arr,setArr] = useState([])
 
@@ -16,7 +16,7 @@ function Product(){
         
     }
     useEffect(()=>{
-        axios.get("http://localhost:5050/frito_products")
+        axios.get("http://localhost:5050/spreads_products")
           .then((res)=>{
              console.log(res.data)
              setData(res.data)
@@ -30,7 +30,7 @@ function Product(){
         <Grid templateColumns='repeat(3, 1fr)' gap={2} >
             { data?.length >0 && data.map((el)=>{
                   return (<GridItem key={el.id}> 
-                                <ProductCard  name={el.name}  price={el.price}  rupee={el.rupee}
+                                <ProductCard2  name={el.name}  price={el.price}  rupee={el.rupee}
                                                    description={el.description} image={el.image}  id={el.id}
                                                    rating={el.rating} quantity={el.quantity} 
                                                    handleData={handleData}
@@ -41,4 +41,4 @@ function Product(){
     </div>
 }
 
-export default Product
+export default Product2

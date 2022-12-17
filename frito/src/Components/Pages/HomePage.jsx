@@ -4,7 +4,8 @@ import HomeCard from "./HomeCard"
 import { Flex,Grid,GridItem } from "@chakra-ui/react"
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import Footer from ".././Footer"
-
+//import WithSubnavigation from "../Navbar"
+import CaptionCarousel from "./Carosel"
 
 function Home(){
     const [data,setData] = useState([])
@@ -20,6 +21,8 @@ function Home(){
 
 
     return <div style={{width:"80%",margin:"auto"}}>
+        {/* <WithSubnavigation/> */}
+        <CaptionCarousel/>
         <h1 style={{fontFamily:"sans-serif" ,fontSize:"25px", marginLeft:"-900px", marginTop:"20px"}}>Shop By Categories</h1>
         <Grid templateColumns='repeat(4, 1fr)' gap={6} >
              {data.map((el)=>{

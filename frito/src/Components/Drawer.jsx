@@ -23,10 +23,12 @@ import {
   import AddIcon from "@mui/icons-material/Add";
   import { BiGroup } from "react-icons/bi";
   import { Link as RouterLink } from "react-router-dom";
+  import { useNavigate } from "react-router-dom";
 
 function DrawerExample() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const firstField = React.useRef()
+    let navigate = useNavigate()
   
     return (
       < >
@@ -52,7 +54,7 @@ function DrawerExample() {
           <DrawerOverlay  />
           <DrawerContent marginRight={38} width="350px" backgroundColor={"white"} >
             <DrawerCloseButton />
-            <DrawerHeader borderBottomWidth='1px' paddingTop={80} marginRight={30} width="350px" backgroundColor={"white"}>
+            <DrawerHeader borderBottomWidth='1px' paddingTop={299} marginRight={30} width="350px" backgroundColor={"white"}>
               Sign In/ Sign Up
             </DrawerHeader>
   
@@ -87,6 +89,10 @@ function DrawerExample() {
   
                 <Button colorScheme='blue' margin="auto" >Proceed Via OTP</Button>
                 
+                  <Button  onClick={()=>{
+                    navigate("/Signup_as_admin.jsx")
+                  }}>SignUp as ADMIN</Button>
+                  
               </Stack>
             </DrawerBody>
   
