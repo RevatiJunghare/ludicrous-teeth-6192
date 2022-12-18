@@ -33,7 +33,7 @@ import { useEffect ,useState} from 'react';
     console.log(id)
 
     useEffect(()=>{
-        axios.get(`http://localhost:5050/spreads_products/${id}`)
+        axios.get(`https://crowded-plum-horse.cyclic.app/spreads_products/${id}`)
            .then(({data})=>{
               setProduct(data)
            })
@@ -75,7 +75,7 @@ import { useEffect ,useState} from 'react';
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={'2xl'}>
-                <Flex><Text>₹</Text>
+                <Flex style={{marginLeft:"280px",marginTop:"20px"}}><Text>₹</Text>
                    <Text>{rupee}</Text>
                    </Flex>
               </Text>
@@ -165,7 +165,7 @@ import { useEffect ,useState} from 'react';
               </Box>
             </Stack>
   
-            <RouterLink to={`/cart/${id}`}>
+            <RouterLink to={`/cart3/${id}`}>
                <Button
                 rounded={'none'}
                  w={'full'}

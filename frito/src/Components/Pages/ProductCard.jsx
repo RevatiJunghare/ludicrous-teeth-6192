@@ -34,7 +34,7 @@ import {
   
   function Rating({ rating, numReviews }) {
     return (
-      <Box d="flex" alignItems="center">
+      <Box d="flex" alignItems="center" >
         {Array(5)
           .fill('')
           .map((_, i) => {
@@ -81,6 +81,8 @@ import {
           shadow="lg"
           position="relative"
           height="480px"
+          marginTop={20}
+         // zIndex="-2"
           >
           {data.isNew && (
             <Circle

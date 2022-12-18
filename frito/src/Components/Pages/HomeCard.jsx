@@ -23,7 +23,7 @@ import {
           boxShadow={'2xl'}
           rounded={'lg'}
           pos={'relative'}
-          zIndex={1}>
+          zIndex={-2}>
           <Box
             rounded={'lg'}
             mt={-12}

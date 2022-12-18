@@ -12,6 +12,7 @@ import {
   import { useState } from 'react';
   import { Link as RouterLink } from "react-router-dom";
   import Model from '../Model';
+  import axios from 'axios';
   
   
   
@@ -30,6 +31,12 @@ import {
         }
         setCounter(counter-1)
     }
+
+
+    const handleDelete = (id) => {
+      return axios.delete(`https://crowded-plum-horse.cyclic.app/fish_products/${id}`)
+      
+    };
 
     return (
       <Center py={6} >
@@ -96,6 +103,7 @@ import {
                    <Text>{rupee*counter}</Text>
                    </Flex>
           </Stack>
+          {/* <Button onClick={() => handleDelete(id)}>DELETE</Button> */}
         </Box>
         
       </Center>

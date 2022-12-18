@@ -60,7 +60,7 @@ import {
     );
   }
   
-  function ProductCard2(prop) {
+  function ProductCard3(prop) {
 
     let {name,rupee,description,image,id,rating,quantity,handleData}= prop
 
@@ -93,7 +93,7 @@ import {
             />
           )}
   
-          <RouterLink to={`/product2/${id}`}>
+          <RouterLink to={`/product3/${id}`}>
              <Image
                src={image}
                alt={`Picture of ${name}`}
@@ -163,4 +163,4 @@ import {
 
   
   
-  export default ProductCard2;
+  export default ProductCard3;

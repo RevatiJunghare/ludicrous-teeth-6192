@@ -16,7 +16,7 @@ function Product2(){
         
     }
     useEffect(()=>{
-        axios.get("http://localhost:5050/spreads_products")
+        axios.get("https://crowded-plum-horse.cyclic.app/spreads_products")
           .then((res)=>{
              console.log(res.data)
              setData(res.data)

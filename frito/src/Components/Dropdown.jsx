@@ -72,16 +72,20 @@ import {
                      All Category Food
                    </Button>
                 </RouterLink>
-                <Button
-                  w="194px"
-                  variant="ghost"
+
+                <RouterLink to="/product3">
+                    <Button
+                       w="194px"
+                       variant="ghost"
                   
-                  justifyContent="space-between"
-                  fontWeight="normal"
-                  colorScheme="red"
-                  fontSize="sm">
-                  Fish & Sea Food
-                </Button>
+                       justifyContent="space-between"
+                       fontWeight="normal"
+                       colorScheme="red"
+                       fontSize="sm">
+                       Fish & Sea Food
+                     </Button>
+                </RouterLink>
+                
                 <Button
                   w="194px"
                   variant="ghost"

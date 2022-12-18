@@ -87,7 +87,9 @@ function DrawerExample() {
                 </Box>
   
   
-                <Button colorScheme='blue' margin="auto" >Proceed Via OTP</Button>
+                <Button colorScheme='blue' margin="auto" onClick={()=>{
+                  alert("OTP is 2946")
+                }}>Proceed Via OTP</Button>
                 
                   <Button  onClick={()=>{
                     navigate("/Signup_as_admin.jsx")

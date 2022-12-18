@@ -21,28 +21,39 @@ import { Button }  from "@chakra-ui/react";
 export default function Cart() {
   const [cart,setCart] = useState([])
   const {id} = useParams()
+  const [isloading,setIsLoading] = useState(true)
 
-  
+  console.log(id)
 
   const fetchData = ()=>{
-    axios.get(`http://localhost:5050/frito_products/${id}`)
-      .then((data)=>
+    axios.get(`https://crowded-plum-horse.cyclic.app/frito_products/${id}`)
+      .then((data)=>{
         setCart([...cart,data.data])
        //console.log(data.data)
+       setIsLoading(false)
+      }
       )
   
   }
+  
 
   useEffect(()=>{
     fetchData(id)
   },[id])
 
-console.log(cart)
 
-  return (
+
+  // if(isloading){
+  //   return <img src="https://media.istockphoto.com/id/1220443914/vector/set-of-colorful-shopping-bags-isolated-on-the-purple-background.jpg?s=612x612&w=0&k=20&c=m6mvEUgScewU3YmaiFZGEtGzi6OebDkpTNswCL8jJtg="/>
+  // }
+
+
+  return isloading ? <><h1>Your Cart is Empty</h1>
+  <img style={{width:"400px",marginTop:"50px",marginLeft:"500px"}}  src="https://media.istockphoto.com/id/1220443914/vector/set-of-colorful-shopping-bags-isolated-on-the-purple-background.jpg?s=612x612&w=0&k=20&c=m6mvEUgScewU3YmaiFZGEtGzi6OebDkpTNswCL8jJtg="/> 
+  </>: (
     <div style={{marginTop:"80px"}}>
       {/* <img src="https://www.seekpng.com/png/detail/117-1170538_404-your-cart-is-empty.png"/>  */}
-      <h1 style={{fontFamily:"sans-serif" ,fontSize:"25px", marginLeft:"-900px", marginTop:"20px"}}></h1>
+      <h1 style={{fontFamily:"sans-serif" ,fontSize:"25px", marginLeft:"30px", marginTop:"10px",marginBottom:"30px"}}>Order Summary</h1>
 
         <Grid templateColumns='repeat(1, 1fr)' gap={6} >
           

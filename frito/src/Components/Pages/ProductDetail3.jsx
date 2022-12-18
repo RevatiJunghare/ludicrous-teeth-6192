@@ -24,16 +24,15 @@ import { useEffect ,useState} from 'react';
   import { Link as RouterLink } from "react-router-dom";
   
   
-  export default function ProductDetail({obj}) {
+  export default function ProductDetail3({obj}) {
     const [product,setProduct] = useState({})
-    
-
-    
+    const [category,setCategory] = useState("fish_products")
     const {id} = useParams()
+
     console.log(id)
 
     useEffect(()=>{
-        axios.get(`https://crowded-plum-horse.cyclic.app/frito_products/${id}`)
+        axios.get(`https://crowded-plum-horse.cyclic.app/fish_products/${id}`)
            .then(({data})=>{
               setProduct(data)
            })
@@ -158,14 +157,14 @@ import { useEffect ,useState} from 'react';
                     <Text as={'span'} fontWeight={'bold'}>
                       Recipe:
                     </Text>{' '}
-                    {recipe}
+                    {description}
                   </ListItem>
                   
                 </List>
               </Box>
             </Stack>
   
-            <RouterLink to={`/cart/${id}`}>
+            <RouterLink to={`/cart2/${id}`}>
                <Button
                 rounded={'none'}
                  w={'full'}

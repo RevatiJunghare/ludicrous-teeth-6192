@@ -41,12 +41,12 @@ export default function CaptionCarousel() {
   const cards = [
     {
       image:
-        'https://d2407na1z3fc0t.cloudfront.net/Slider/banner_63630e9d6ba0e',
+        'https://img.freepik.com/free-photo/baked-chicken-wings-asian-style_2829-10157.jpg?w=2000',
     },
     {
       
       image:
-        'https://static.onecms.io/wp-content/uploads/sites/43/2022/05/26/8805-CrispyFriedChicken-mfs-3x2-072.jpg',
+        'https://img.freepik.com/premium-photo/half-grilled-chicken-plate_268847-170.jpg?w=2000',
     },
     {
       
@@ -59,8 +59,10 @@ export default function CaptionCarousel() {
     <Box
       position={'relative'}
       height={'500px'}
-      width={"full"}
+      width={"1200px"}
       overflow={'hidden'}
+      zIndex={-2}
+      
       >
         
       {/* CSS files for react-slick */}
@@ -104,14 +106,16 @@ export default function CaptionCarousel() {
         {cards.map((card, index) => (
           <Box
             key={index}
-            height={'12xl'}
+            height={'10xl'}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
-            backgroundSize="1500px"
+            backgroundSize="1150px"
+            
+            marginTop={50}
             backgroundImage={`url(${card.image})`}>
             {/* This is the block you need to change, to customize the caption */}
-            <Container size="container.lg" height="600px" position="relative" width="300px" >
+            <Container size="container.md" height="600px" position="relative" width="600px" >
               <Stack
                 spacing={6}
                 w={'sm'}

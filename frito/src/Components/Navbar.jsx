@@ -66,7 +66,7 @@ import { BiGroup } from "react-icons/bi";
 import { BiCategory } from "react-icons/bi";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Link as RouterLink } from "react-router-dom";
-import Logo from "../Components/Pages/Frito.png";
+import Logo from "../Components/Pages/rev.jpeg";
 import AddIcon from "@mui/icons-material/Add";
 import DrawerExample from "./Drawer"
 import Dropdown from "./Dropdown"
@@ -86,20 +86,22 @@ export default function WithSubnavigation() {
   const { onToggle } = useDisclosure();
 
   return (
-    <Navbar style={{height:"60px",width:"1500px",marginTop:"30px"}}>
+    <Navbar style={{height:"60px",width:"1500px",marginTop:"30px",
+    // position:"fixed"
+    }}>
       <Container  varient="dark" style={{width:"1500px",height:"60px"}}>
       <Flex 
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
-        minH={"30px"}
+        width={1800}
         py={{ base: 3 }}
         px={{ base: 4 }}
-        
+        marginLeft={-50}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
         fontSize={18}
-        height={60}
+        height={40}
         >
         <Flex
           flex={{ base: 1, md: "auto" }}
@@ -111,20 +113,20 @@ export default function WithSubnavigation() {
             icon={
               isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
             }
-            variant={"ghost"}
+            variant={"white"}
             aria-label={"Toggle Navigation"} 
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{  md: "start" }}  >
           <RouterLink to="/">
             <Navbar.Brand>
-                <Navbar.Text style={{marginRight:"100px"}}>
-                     <img src={Logo} style={{width:"150px",marginLeft:"-90px",marginTop:"50px"}} />
+                <Navbar.Text style={{marginRight:"50px"}}>
+                     <img src={Logo} style={{width:"130px",marginLeft:"-90px",marginTop:"40px"}} />
                 </Navbar.Text>
                 <spacer/>
                 <Navbar.Text className="search">
              
-                     <FormControl style={{width:"500px",marginLeft:"-130px",marginTop:"-100px"}} placeholder="Search"/>
+                     <FormControl style={{width:"500px",marginLeft:"-90px",marginTop:"-100px"}} placeholder="Search"/>
                  </Navbar.Text>
               </Navbar.Brand>
           </RouterLink>
@@ -349,7 +351,7 @@ const NAV_ITEMS = [
       },
       {
         subLabel: "Fish & SeaFood",
-        href: "#",
+        href: "/product3",
       },
       {
         subLabel: "Mutton",
