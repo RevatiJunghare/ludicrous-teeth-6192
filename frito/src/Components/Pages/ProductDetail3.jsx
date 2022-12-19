@@ -44,12 +44,13 @@ import { useEffect ,useState} from 'react';
     const {name,rupee,description,image,rating,quantity,discount,message,message2,text,recipe} = product
 
     return (
-      <Container maxW={'7xl'}>
+      <Container maxW={'7xl'} >
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={{ base: 8, md: 10 }}
-          py={{ base: 18, md: 24 }}>
-          <Flex>
+          py={{ base: 18, md: 24 }}
+          >
+          <Flex >
             <Image
               rounded={'md'}
               alt={'product image'}
@@ -60,9 +61,10 @@ import { useEffect ,useState} from 'react';
               align={'center'}
               w={'100%'}
               h={{ base: '100%', sm: '400px', lg: '500px' }}
+              
             />
           </Flex>
-          <Stack spacing={{ base: 6, md: 10 }}>
+          <Stack spacing={{ base: 6, md: 10 }}  >
             <Box as={'header'}>
               <Heading
                 lineHeight={1.1}

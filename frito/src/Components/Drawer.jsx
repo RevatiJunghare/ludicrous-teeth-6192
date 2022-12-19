@@ -29,6 +29,10 @@ function DrawerExample() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const firstField = React.useRef()
     let navigate = useNavigate()
+
+    const handleClick = ()=>{
+      navigate("/")
+    }
   
     return (
       < >
@@ -89,12 +93,13 @@ function DrawerExample() {
   
                 <Button colorScheme='blue' margin="auto" onClick={()=>{
                   alert("OTP is 2946")
+                  navigate("/")
                 }}>Proceed Via OTP</Button>
                 
-                  <Button  onClick={()=>{
+                  {/* <Button  onClick={()=>{
                     navigate("/Signup_as_admin.jsx")
                   }}>SignUp as ADMIN</Button>
-                  
+                   */}
               </Stack>
             </DrawerBody>
   

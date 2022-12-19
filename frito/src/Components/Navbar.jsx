@@ -86,10 +86,10 @@ export default function WithSubnavigation() {
   const { onToggle } = useDisclosure();
 
   return (
-    <Navbar style={{height:"60px",width:"1500px",marginTop:"30px",
-    // position:"fixed"
+    <Navbar style={{height:"60px",width:"1500px",marginTop:"30px",marginRight:"250px"
+     
     }}>
-      <Container  varient="dark" style={{width:"1500px",height:"60px"}}>
+      <Container  varient="dark" style={{width:"1500px",height:"60px",marginRight:"250px"}}>
       <Flex 
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -102,11 +102,13 @@ export default function WithSubnavigation() {
         align={"center"}
         fontSize={18}
         height={40}
+        
         >
         <Flex
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
           display={{ base: "flex", md: "none" }}
+          
           >
           <IconButton
             onClick={onToggle}
@@ -120,8 +122,10 @@ export default function WithSubnavigation() {
         <Flex flex={{ base: 1 }} justify={{  md: "start" }}  >
           <RouterLink to="/">
             <Navbar.Brand>
-                <Navbar.Text style={{marginRight:"50px"}}>
-                     <img src={Logo} style={{width:"130px",marginLeft:"-90px",marginTop:"40px"}} />
+                <Navbar.Text style={{marginRight:"50px",paddingLeft:"100px"}}>
+                    
+                       <img src={Logo} style={{width:"130px",marginLeft:"-90px",marginTop:"40px"}} />
+                   
                 </Navbar.Text>
                 <spacer/>
                 <Navbar.Text className="search">
@@ -194,7 +198,8 @@ export default function WithSubnavigation() {
           justify={"flex-end"}
           direction={"row"}
           spacing={25}
-          marginRight={10}
+          marginRight={60}
+          paddingRight={60}
           >
           <RouterLink >
             {/* <Button
@@ -233,7 +238,7 @@ export default function WithSubnavigation() {
             </Button>
           </RouterLink>
 
-          <Button onClick={toggleColorMode}>
+          <Button onClick={toggleColorMode} marginRight={40}>
             {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
           </Button>
         </Stack>

@@ -51,7 +51,7 @@ import {
     // }
   
     return isloading ? <img src="https://media.istockphoto.com/id/1220443914/vector/set-of-colorful-shopping-bags-isolated-on-the-purple-background.jpg?s=612x612&w=0&k=20&c=m6mvEUgScewU3YmaiFZGEtGzi6OebDkpTNswCL8jJtg="/> : (
-      <div style={{marginTop:"80px"}}>
+      <div >
         {/* <img src="https://www.seekpng.com/png/detail/117-1170538_404-your-cart-is-empty.png"/>  */}
         <h1 style={{fontFamily:"sans-serif" ,fontSize:"25px", marginLeft:"-900px", marginTop:"20px"}}></h1>
   

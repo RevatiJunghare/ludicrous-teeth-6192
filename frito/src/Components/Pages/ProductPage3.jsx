@@ -26,7 +26,7 @@ function Product3(){
 
     return <div style={{width:"83%",margin:"auto"}}>
         
-        <h1 style={{fontFamily:"sans-serif" ,fontSize:"25px", marginLeft:"-900px", marginTop:"20px"}}>All Category Available</h1>
+        <h1 style={{fontFamily:"sans-serif" ,fontSize:"25px", marginLeft:"-900px"}}>All Category Available</h1>
         <Grid templateColumns='repeat(3, 1fr)' gap={2} >
             { data?.length >0 && data.map((el)=>{
                   return (<GridItem key={el.id}> 

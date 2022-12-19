@@ -49,7 +49,7 @@ export default function Cart() {
 
 
   return isloading ? <><h1>Your Cart is Empty</h1>
-  <img style={{width:"400px",marginTop:"50px",marginLeft:"500px"}}  src="https://media.istockphoto.com/id/1220443914/vector/set-of-colorful-shopping-bags-isolated-on-the-purple-background.jpg?s=612x612&w=0&k=20&c=m6mvEUgScewU3YmaiFZGEtGzi6OebDkpTNswCL8jJtg="/> 
+  <img style={{width:"400px",marginLeft:"500px"}}  src="https://media.istockphoto.com/id/1220443914/vector/set-of-colorful-shopping-bags-isolated-on-the-purple-background.jpg?s=612x612&w=0&k=20&c=m6mvEUgScewU3YmaiFZGEtGzi6OebDkpTNswCL8jJtg="/> 
   </>: (
     <div style={{marginTop:"80px"}}>
       {/* <img src="https://www.seekpng.com/png/detail/117-1170538_404-your-cart-is-empty.png"/>  */}
